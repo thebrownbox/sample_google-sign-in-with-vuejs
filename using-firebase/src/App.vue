@@ -15,15 +15,18 @@ export default {
 
     const clickLogin = () => {
       console.log("Click login!");
-      
+
       const provider = new firebase.GoogleAuthProvider();
       console.log(provider);
       const auth = firebase.getAuth();
-      firebase.signInWithPopup(auth, provider).then((r)=>{
-        console.log(r);
-      }).catch((e) => {
-        console.log("error:" + e);
-      });
+      firebase
+        .signInWithPopup(auth, provider)
+        .then((r) => {
+          console.log(r);
+        })
+        .catch((e) => {
+          console.log("error:" + e);
+        });
     };
 
     const clickLogout = () => {
